@@ -28,13 +28,14 @@ pipeline {
 
             agent {
                 docker {
-                    iamge 'node:18-alpine'
+                    image 'node:18-alpine'
                     reuseNode true
                 }
             }
             steps {
                 sh '''
                     echo 'Test stage'
+                    test -f build/index.html
                     npm test
                 '''
             }
