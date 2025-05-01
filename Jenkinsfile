@@ -19,7 +19,7 @@ pipeline {
                       chown -R node:node .
                       rm -rf node_modules package-lock.json
                       npm cache clean --force
-                      npm install
+                      npm ci
                       npm run build
                       ls -la
                 '''
